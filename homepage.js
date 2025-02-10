@@ -158,7 +158,7 @@ $(document).ready(function() {
             )
             
             $(".welcome p").css("margin-left","10px")
-
+           $(".rounded-button").css("width","100px")
 
         } else if (windowWidth >= 600 && windowWidth < 1024) {
             $("#navList").css({
@@ -169,7 +169,7 @@ $(document).ready(function() {
 
             });
 
-
+            $(".rounded-button").css("width","150px")
             $(".info a").css({
                 "width": "150px",
                 
@@ -194,7 +194,7 @@ $(document).ready(function() {
                "bottom":"70px",
               
             });
-
+            $(".rounded-button").css("width","120px")
             $(".info a").css({
                 "width": "200px",
                 
