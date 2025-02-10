@@ -12,7 +12,7 @@ $(function(){
         "border-radius": "25px", 
         "border": "1px solid black", 
         "width": "80vw",
-        "font-size": "1em",
+        "font-size": "1vw",
         "margin-left": "5vw",  
         
         
