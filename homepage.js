@@ -141,6 +141,25 @@ $(document).ready(function() {
                "bottom":"40px",
               
             });
+            $(".info a").css({
+                "width": "100px",
+                
+            });
+
+            $(".info h4,.info a").css({
+                "font-size":"10px"
+                
+            });
+            $(".rooms").css({
+                "padding":"0px",
+                "border-radius":"1px",
+                "gap":"50px"
+            }
+            )
+            
+            $(".welcome p").css("margin-left","10px")
+
+
         } else if (windowWidth >= 600 && windowWidth < 1024) {
             $("#navList").css({
                 "position": "relative",
@@ -149,6 +168,25 @@ $(document).ready(function() {
                 
 
             });
+
+
+            $(".info a").css({
+                "width": "150px",
+                
+            });
+
+            $(".info h4,.info a").css({
+                "font-size":"20px"
+                
+            });
+            $(".rooms").css({
+                "padding":"10px",
+                "border-radius":"10px",
+                "gap":"50px"
+            }
+            )
+
+
         } else {
             $("#navList").css({
               "position": "relative",
@@ -156,6 +194,24 @@ $(document).ready(function() {
                "bottom":"70px",
               
             });
+
+            $(".info a").css({
+                "width": "200px",
+                
+            });
+
+            $(".info h4,.info a").css({
+                "font-size":"20px"
+                
+            });
+            $(".rooms").css({
+                "padding":"20px",
+                "border-radius":"20px",
+                "gap":"100px"
+            }
+            )
+
+
         }
     }
 
