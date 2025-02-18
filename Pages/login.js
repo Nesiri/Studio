@@ -71,7 +71,7 @@ $(document).ready(function () {
            
           updateNavBar(user.userType);
 
-          window.location.href = user.userType === "owner" ? "owner.html" : "renter.html";
+          window.location.href = user.userType === "owner" ? "owner.html" : "rent.html";
         } else {
            
             $("label:first").append('<span class="error">This email doesn\'t exist</span>');
