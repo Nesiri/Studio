@@ -18,21 +18,7 @@ $(document).ready(function () {
     });
 
    
-    let studioData = JSON.parse(localStorage.getItem("studioData")) || [
-        { image: "2.png", name: "Modern Loft", price: "$1000/mo, 400/week, 50/hr", badge: "Featured" },
-        { image: "3.png", name: "Modern Loft", price: "$800/mo", badge: "Popular" },
-        { image: "9.png", name: "Modern Loft", price: "$900/mo", badge: "Featured" },
-        { image: "0.png", name: "Modern Loft", price: "$1000/mo", badge: "Featured" },
-        { image: "..20.png", name: "Modern Loft", price: "$1000/mo", badge: "Featured" },
-        { image: "../web/01/3.png", name: "Modern Loft", price: "$1000/mo", badge: "Featured" },
-        { image: "../web/01/4.png", name: "Modern Loft", price: "$800/mo", badge: "Popular" },
-        { image: "5.png", name: "Modern Loft", price: "$900/mo", badge: "Featured" },
-        { image: "../web/01/6.png", name: "Modern Loft", price: "$1000/mo", badge: "Featured" },
-        { image: "7.png", name: "Modern Loft", price: "$1000/mo", badge: "Featured" },
-        { image: "8.png", name: "Modern Loft", price: "$800/mo", badge: "Popular" },
-        { image: "../web/01/9.png", name: "Modern Loft", price: "$900/mo", badge: "Featured" },
-        { image: "../web/01/10.png", name: "Modern Loft", price: "$1000/mo", badge: "Featured" }
-    ];
+    let studioData = JSON.parse(localStorage.getItem("studioData")) || [ ];
 
   
     let defaultStudioIndex = studioData.length;
