@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    border-right: 10px solid rgb(181, 172, 255);
+    border-left: 10px solid rgb(181, 172, 255);
+}
+
+body main {
+    padding: 20px;
+    height: auto;
+min-height:89vh;
+
+}
+
+#brandphoto {
+    width: 5%;
+    height: auto;
+    float: left;
+    position: relative;
+    left: 5vw;
+}
+
+header {
+    background-color: #B5ACFF;
+    width: 100%;
+    height: 4vw;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5vw;
+    position: relative;
+    right: 35%;
+    color: #000000;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 2vw;
+    position: relative;
+    right: 35vw;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-flex;
+    margin: 0 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    position: relative;
+    left: 20vw;
+    bottom: 4vw;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Form Section Styles */
+#formSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #fff;
+}
+
+#formSection form {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #dedbe3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for form */
+#addStudioForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Full-width elements */
+#addStudioForm h2,
+#addStudioForm button {
+    grid-column: span 2;
+    text-align: center;
+}
+
+/* Input group styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling the button */
+button[type="submit"] {
+    width:200px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4b7408b9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+#deleteStudio {
+    display:inline;
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #07010cf6;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    left: 25vw;
+    bottom:45px;
+}
+
+
+#deleteStudio:hover{
+    background-color: #8a0210;
+}
+button[type="submit"]:hover {
+    background-color: #028A57;
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 120px;
+}
+
+.studio-card {
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.studio-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.studio-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.studio-price {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.edit-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    border: 2px solid #ccc;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    border-color: black;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(181, 172, 255);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer strong {
+    color: #04AA6D;
+}
+
+#studioListings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+    padding: 20px;
+}
+
+.studio-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
