@@ -85,7 +85,7 @@ $(document).ready(function () {
             };
             reader.readAsDataURL(files[0]);
         } else {
-            newStudio.image = "../web/01/7.png"; // Default image
+            newStudio.image = "01/7.png"; // Default image
             callback();
         }
     }
@@ -136,7 +136,7 @@ $(document).ready(function () {
                     .attr("data-index", index)
                     .html(`
                         <div class="badge">${studio.badge || "Featured"}</div>
-                        <img src="${studio.image}" alt="Studio Image" onerror="this.src='../web/01/7.png';">
+                        <img src="${studio.image}" alt="Studio Image" onerror="this.src='01/7.png';">
                         <div class="card-content">
                             <div class="studio-name">${studio.name}</div>
                             <div class="studio-rental-terms">
