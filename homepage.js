@@ -1,226 +1,104 @@
-$(function(){
-
-    $(".popup").hide();
-    
-    const currentDate = new Date();
-    $("#timestamp").text(currentDate.toLocaleDateString());
-
-    
-    $("header").after('<img src="header.png" alt="Header Image" style="width:100%;">');
-
-    
-    $(".welcome").css({
-        "border-radius": "25px",
-        "border": "1px solid black",
-        "width": "80vw",
-        "font-size": "1vw",
-        "margin-left": "5vw"
+$(document).ready(function () {
+    // ===== Toggle Between Login and Signup Forms =====
+    $("#show-signup").click(function (event) {
+        event.preventDefault();
+        $("#logIn").hide();
+        $("#signup-form").fadeIn();
     });
 
-    $(".welcome img").css({
-        "position": "relative",
-        "left": "25vw",
-        "bottom": "5vw",
-        "height": "30%",
-        "width": "30%"
+    $("#show-login").click(function (event) {
+        event.preventDefault();
+        $("#signup-form").hide();
+        $("#logIn").fadeIn();
     });
 
-    $(".welcome p, .welcome h3").css({
-        "position": "relative",
-        "right": "25vw",
-        "top": "5vw"
-    });
-
-    
-   
-
-    
-
-    
-    $("body").css({
-        "border-right": "10px solid rgb(181,172,255)",
-
-        
-        "border-left": "10px solid rgb(181,172,255)"
-    });
-
-   
-    $("footer").css("height", "40%");
+// ===== Login Functionality =====
+$("#logIn").submit(function (event) {
+    event.preventDefault();
+    const email = $("#email").val().trim();
+    const signedUpUsers = JSON.parse(localStorage.getItem("signedUpUsers")) || [];
+    const user = signedUpUsers.find(user => user.email === email);
 
   
-    $(".rooms .room").each(function(index) {
-        $(this).addClass(index % 2 === 0 ? "odd" : "even")
-    });
+    $("#email-error").remove();
 
- 
-   
-
-    $("#about-button").click(function() {
-        $("#additional-content").slideToggle(400, function() {
-            $("html, body").animate({
-                scrollTop: $("#additional-content").offset().top
-            }, 500); 
-        });
-    });
-
-
-});    
-
-$(function() {
-   
-    let studioData = JSON.parse(localStorage.getItem("studioData")) || [];
-
- 
-    $(".rooms .room img").each(function(index) {
-       
-        $(this).addClass(index % 2 === 0 ? "odd" : "even").css({
-            width: "500px",
-            height: "350px"
-        });
+    if (user) {
+        localStorage.setItem("loggedInUser", JSON.stringify(user));
+        console.log("user",user)
+        window.location.href = user.userType === "owner" ? "owner.html" : "renter.html";
+    } else {
+        
+        $("label[for='email']").append('<span id="email-error" style="color: red; font-size: 14px; margin-left: 10px;">This email doesn\'t exist. Please sign up.</span>');
 
        
-        if (studioData[index]) {
-            $(this).attr("src", studioData[index].image);
+        setTimeout(function() {
+            $("#email-error").fadeOut(500, function() {
+                $(this).remove(); 
+            });
+        }, 5000);
+    }
+});
+
+
+
+
+
+    // ===== Signup Functionality =====
+    $("#signUp").submit(function (event) {
+        event.preventDefault();
+        const name = $("#fullname").val().trim();
+        const email = $("#email-signup").val().trim();
+        const phone = $("#phone").val().trim();
+        const userType = $("input[name='role']:checked").val();
+        const countryCode = $("#signup-form select").val();
+        if (!name || !email || !phone || !userType || !countryCode) {
+            alert("Please fill in all fields.");
+            return;
         }
+        const signedUpUsers = JSON.parse(localStorage.getItem("signedUpUsers")) || [];
+        signedUpUsers.push({ name, email, phone: `${countryCode}${phone}`, userType });
+        localStorage.setItem("signedUpUsers", JSON.stringify(signedUpUsers));
+        console.log("sign",signedUpUsers)
+      
+       
+        $("#signup-form").hide();
+        $("#logIn").fadeIn();
     });
 
-   
-   
-    $("h4").each(function(index) {
-        if (studioData[index]) {
-            $(this).text(studioData[index].name);
-    
-           
-    
-            const plusImage = $('<img>', {
-                src: "plus.png",
-                alt: "",
-                css: {
-                    width: "6vw",
-                    height: "6vw",
-                    display: "inline-block",
-                    verticalAlign: "middle",
-                    marginLeft: "8px"
+    // ===== Remember Me Checkbox =====
+    const rememberCheckbox = $("#remember");
+    rememberCheckbox.prop("checked", localStorage.getItem("rememberMe") === "true");
+    rememberCheckbox.change(function () {
+        localStorage.setItem("rememberMe", this.checked ? "true" : "false");
+    });
+});
+
+
+
+$(document).ready(function () {
+    // Fetch Country Codes
+    fetch("https://restcountries.com/v3.1/all")
+        .then(response => response.json())
+        .then(data => {
+            let countrySelect = document.querySelector("#countryCode");
+            data.sort((a, b) => a.name.common.localeCompare(b.name.common)); // Sort by country name
+            data.forEach(country => {
+                if (country.idd && country.idd.root) {
+                    let option = document.createElement("option");
+                   
+                    const countryAbbreviation = country.cca3; 
+                   
+                    option.value = country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : "");
+                    option.textContent = `${countryAbbreviation} (${option.value})`;
+
+                  
+                    if (countryAbbreviation === "CAN") {
+                        option.selected = true;
+                    }
+
+                    countrySelect.appendChild(option);
                 }
             });
-    
-            if (index % 2 === 0) {
-                $(this).append(plusImage);  
-            } else {
-                $(this).prepend(plusImage); 
-            }
-        }
-    });
-    
- 
-for (let i = $(".rooms .room").length; i < studioData.length; i++) {
-   
-    const newRoom = $('<div>', {
-        class: `room ${i % 2 === 0 ? "odd" : "even"}`,
-        css: {
-            display: "flex",          
-            alignItems: "center",    
-            gap: "10px"              
-        }
-    });
-
-   
-    const info = $('<div>', {
-        class: "info"
-    });
-
-   
-    const newH4 = $('<h4>').text(studioData[i].name);
-
-  
-    const plusImage = $('<img>', {
-        src: "plus.png",
-        alt: "",
-        css: {
-            width: "6vw",
-            height: "6vw",
-            display: "inline-block",
-            verticalAlign: "middle",
-           
-           
-        }
-    });
-
-   
-    if (i % 2 === 0) {
-        newH4.append(plusImage).css("margin-right", "200px");  
-    } else {
-        newH4.prepend(plusImage).css("margin-left", "200px"); 
-    }
-
-   
-    const moreDetails = $('<a>', {
-        href: "#",
-        class: "moreDetails",
-        text: "more details"
-    });
-
-   
-    info.append(newH4, moreDetails);
-
-   
-    const newImg = $('<img>', {
-        src: studioData[i].image,
-        css: {
-            width: "500px",
-            height: "350px"
-        }
-    });
-
-  
-    newRoom.append(info, newImg);
-
-   
-    $(".rooms").append(newRoom);
-}
-$(".rooms .room").each(function (index) { 
-    const studioName = $(this).find("h4").text().trim();
-
-    const storedData = JSON.parse(localStorage.getItem("studioData")) || [];
-    const studio = storedData.find(item => item.name === studioName);
-
-    if (studio) {
-        let roomImage;
-
-        if (index < 5) {
-          
-            roomImage = $(this).children("img").first();
-        } else {
-           
-            roomImage = $(this).children("img").eq(2);
-
-        }
-
-    
-        roomImage.wrap("<div class='badge-container'></div>");
-
-      
-        const badgeElement = $('<div>', {
-            class: "badge-label",
-            text: studio.badge
-        });
-
-    
-        roomImage.before(badgeElement);
-    }
+        })
+        .catch(error => console.error("Error fetching country codes:", error));
 });
-
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
