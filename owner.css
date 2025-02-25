@@ -128,6 +128,9 @@ nav ul li a {
 
 /* Styling the button */
 button[type="submit"] {
+    position: relative;
+    top: 10px;
+    left: 150px;
     width:200px;
     padding: 10px;
     font-size: 16px;
@@ -139,25 +142,7 @@ button[type="submit"] {
 }
 
 
-#deleteStudio {
-    display:inline;
-    width: 200px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #07010cf6;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    position: relative;
-    left: 25vw;
-    bottom:45px;
-}
 
-
-#deleteStudio:hover{
-    background-color: #8a0210;
-}
 button[type="submit"]:hover {
     background-color: #028A57;
 }
@@ -165,25 +150,32 @@ button[type="submit"]:hover {
 
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 120px;
+    display: flex; /* Use flexbox to arrange items horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if there isn't enough space */
+    gap: 20px; /* Space between the cards */
+    justify-content: flex-start; /* Align items to the left */
+    max-width: 100%; /* Ensure the container uses the full width */
+    margin: 120px auto; /* Center the container horizontally */
+    padding: 20px; /* Optional padding for inner spacing */
+    margin-left: 100px;
 }
 
 .studio-card {
-    position: relative;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    width: 350px; /* Set a fixed width for the cards */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    margin-bottom: 20px; /* Space between cards vertically */
 }
+
 
 .studio-card img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
+ 
 }
 
 .badge {
@@ -213,15 +205,9 @@ button[type="submit"]:hover {
     font-weight: bold;
 }
 
-.edit-btn {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: white;
-    border: 2px solid #ccc;
-    padding: 8px;
-    border-radius: 50%;
-    cursor: pointer;
+.delete-btn{
+    display: flex;
+    float: right;
 }
 
 .edit-btn:hover {
