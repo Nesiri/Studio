@@ -3,149 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtNest Studio</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
-    crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="homepage.css">   
-    <script src="updateNavBar.js"></script>
+    <title>Artnest Studio Login</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
     <header>
+      <div class="logo">
         <img src="brandphoto.png" id="brandphoto" alt="">
         <h1> <em><span style="color: green;">A</span>RT<span style="color: green;">N</span>EST</em></h1>
         <h2>STUDIO</h2>
-        <nav>
-            <ul id="navList">
-                <li><a href="#" id="about-button">About</a></li>
-                <li><button class="rounded-button">Log in</button></li>
-              
-            </ul>
-        </nav>
+      </div>
+      <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+      </nav>
     </header>
-  
-           
-     
-
-    <div class="container">
-        <div class="welcome">
-            <h3>Welcome to our Platform</h3>
-            <p>Discover a variety of studies available for rent</p>
-            <img src="welcome.png" alt="">
-        </div>
-        <div class="rooms">
-            <div class="room">
-                <img src="meet.png" alt="Meeting Room">
-                <div class="info">
-                <h4>Meeting room </h4>
-                <a href="#" class="moreDetails">more details</a>
-                </div>
-            </div>
-            <div class="room">
-                <img src="record.png" alt="Recording Room">
-                <div class="info">
-                <h4>Recording room </h4>
-                <a href="#" class="moreDetails">more details</a>
-                </div>
-            </div>
-            <div class="room">
-                <img src="boardgame.png" alt="Board Game Room">
-                <div class="info">
-                <h4>Board game room  </h4>
-                <a href="#" class="moreDetails">more details</a>
-                </div>
-            </div>
-            <div class="room">
-                <img src="danceroom.png" alt="Dance Room">
-                <div class="info">
-                <h4>Dance room </h4>
-                <a href="#" class="moreDetails">more details</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hidden Section for Studio Listings -->
-        <div id="studioDetails" class="studio-details" style="display: none;">
-            <h3>Studio Listings</h3>
-            <div id="studioList"></div> <!-- Vertical list will be inserted here -->
-            <button id="closeDetails">Close</button>
-        </div>
     
-        <div class="additional-content" id="additional-content">
-            <h3>More About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-    </div>
-
-
-<!-- Popup Login Form -->
-<div id="loginPopup" class="popup">
-    <div class="popup-content">
-        <span id="closeLoginPopup" class="close-btn">&times;</span>
-        <h2>Login</h2>
-        <form id="loginForm">
+    <main>
+      <!-- Left side: Gallery -->
+      <div class="left">
+        <section class="gallery">
+          <div class="image-stack">
+            <img src="../web/01/6.png" alt="Studio Image" class="image image1">
+            <img src="../web/01/7.png" alt="Studio Image" class="image image2">
+            <img src="../web/04/9.png" alt="Studio Image" class="image image3">
+            <img src="../web/01/10.png" alt="Studio Image" class="image image4">
+            <img src="../web/01/10.png" alt="Studio Image" class="image image5">
+            <img src="../web/01/11.png" alt="Studio Image" class="image image6">
+          </div>
+        </section>
+      </div>
+      
+      <!-- Right side: Login form -->
+      <div class="right">
+        <section class="login-form">
+          <form id="logIn">
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required>
-            <label>
-                <input type="checkbox" name="remember"> Remember me
-            </label>
-            <button type="submit">LOGIN</button>
-        </form>
-        <p>New? <a href="#" id="openSignupPopup">Click Sign up</a></p>
-    </div>
-</div>
-
-<!-- Sign up Form -->
-<div id="signupPopup" class="popup">
-    <div class="popup-content">
-        <span id="closeSignupPopup" class="close-btn">&times;</span>
-        <h2>Create Account</h2>
-        <form id="signupForm">
-            <div>
-                <label for="name"> Full Name: </label>
-                <input type="text" id="name" placeholder="Write your name" required>
+            <div class="remember-me">
+              <input type="checkbox" id="remember">
+              <label for="remember">Remember me</label>
             </div>
-            <div>
-                <label for="signupEmail">Email Address:</label>
-                <input type="email" id="signupEmail" name="email" placeholder="Write e-mail here" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
-         
-            </div>
-           
-             <div>
-               <label for="phone">Phone: </label>
-                <div class="phone-input">
-                    <select id="countryCode"></select>
-                    <input type="tel" id="phone" placeholder="Enter phone number">
-                </div>
-            </div>
-          
-            <div>
-                <label>
-                    <input type="radio" name="userType" value="owner" > Owner
-                </label>
-                <label>
-                    <input type="radio" name="userType" value="renter"> Renter
-                </label>
-            </div>
-            <button type="submit" id="btn">Sign Up</button>
-            <p> <a href="#" id="switchToLogin"> Do you have an account?</a></p>
-        </form>
-    </div>
-</div>
-
-
-
-
-
-<footer>
-    <p>Designed by <strong> <em>a Team Memebers</em></strong> | <span id="timestamp"></span> | &copy; 2025 All rights reserved.</p>
-</footer>
+            <button type="submit">Login</button>
+            <p>New? <a href="#" id="show-signup">Click Sign up</a></p>
+          </form>
+        </section>
+        <section class="signup-form" id="signup-form" style="display: none;">
+            <form id="signUp">
+              <label for="fullname">Full Name:</label>
+              <input type="text" id="fullname" name="fullname" placeholder="Write your name" required>
+        
+              <label for="email-signup">E-mail:</label>
+              <input type="email" id="email-signup" name="email" placeholder="Write your email" required>
+              <label for="phone">Phone Number:</label>
+              <div class="phone-number-container">
+              <select id="countryCode"></select>
+                <input type="tel" id="phone" name="phone" placeholder="Input phone number" required>
+              </div>
+        
+               <div id="radio">
+                <input type="radio" name="role" value="owner"> Owner
+                <br>
+                <input type="radio" name="role" value="renter"> Renter
+               </div>
+             
+        
+              <button type="submit">Sign Up</button>
+               <a href="#" id="show-login">Already have an account?</a>
+            </form>
+        </section>
+      </div>
+    </main>
     
-    
-    
+    <footer>
+      <img src="../web/04/6.png" alt="Footer Image">
+      <div class="social-links">
+        <a href="#instagram">Instagram</a>
+        <a href="#linkedin">LinkedIn</a>
+        <a href="#twitter">Twitter</a>
+        <a href="#facebook">Facebook</a>
+      </div>
+    </footer>
+
     <script src="homepage.js"></script>
-    <script src="login.js"></script>
-    
-</body>
+  </body>
 </html>
