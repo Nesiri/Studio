@@ -1,289 +1,174 @@
+$(document).ready(function () {
+    const studioData = JSON.parse(localStorage.getItem("studioData")) || [];
+    const signedUpUsers = JSON.parse(localStorage.getItem("signedUpUsers")) || [];
+    const user = JSON.parse(localStorage.getItem("loggedInUser")) || null;
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
+    // Hide popup initially
+    $("#studioPopup").hide();
 
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    border-right: 10px solid rgb(181, 172, 255);
-    border-left: 10px solid rgb(181, 172, 255);
-    overflow-x: hidden;
-}
+    // Add index to each studio
+    studioData.forEach((studio, index) => {
+        studio.index = index;
+        console.log("studio index",index)
+    });
 
-body main {
-    padding: 20px;
-    height: auto;
-min-height:89vh;
+     // Open studio popup when a studio card is clicked
+     $(document).on("click", ".studio-card", function () {
+        const studioIndex = $(this).attr("data-index"); // Ensure data-index is read correctly
+        console.log("Studio Index:", studioIndex);
 
-}
+        if (studioIndex !== undefined) {
+            const clickedStudio = studioData[studioIndex];
+            console.log("Clicked Studio:", clickedStudio);
 
-#brandphoto {
-    width: 5%;
-    height: auto;
-    float: left;
-    position: relative;
-    left: 5vw;
-}
+            if (clickedStudio) {
+                openPopup(clickedStudio.index);
+                displayOwnerContactInfo(clickedStudio.index);
+            }
+        }
+    });
 
-header {
-    background-color: #B5ACFF;
-    width: 100%;
-    height: 4vw;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    z-index: 1000;
-}
+    // Function to open the studio popup and populate data
+    function openPopup(index) {
+        const studio = studioData[index];
+        $(".term").hide(); // Hide all rental term rows initially
 
-header h1 {
-    margin: 0;
-    font-size: 2.5vw;
-    position: relative;
-    right: 35%;
-    color: #000000;
-}
+        if (studio) {
+            $("#popupTitle").text(studio.name);
+            $("#popupImage").attr("src", studio.image || "record.png");
+            $("#name").text(studio.name || "");
+            $("#type").text(studio.type || "");
+            $("#popupAddress").text(studio.address || "");
+            $("#popupArea").text(studio.area ? studio.area + " sq ft" : "");
+            $("#parking").text(studio.parking || "Not Available");
+            $("#popupCapacity").text(studio.capacity ? studio.capacity + " people" : "");
+            $("#availability").text(studio.availability || "");
+            $("#Transport").text(studio.publicTransport || "");
 
-header h2 {
-    margin: 0;
-    font-size: 2vw;
-    position: relative;
-    right: 35vw;
-    color: #000000;
-    text-align: center;
-    margin-bottom: 20px;
-}
+            // Show rental terms and prices dynamically
+            if (studio.rentalTerms && studio.rentalTerms.length > 0) {
+                studio.rentalTerms.forEach((term) => {
+                    $(".term").each(function () {
+                        const termText = $(this).find("td:first").text().trim().toLowerCase();
+                        if (termText === term.term.toLowerCase()) {
+                            $(this).show();
+                            $(this).find(".price").text(term.price);
+                        }
+                    });
+                });
+            }
+        }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        $("#studioPopup").show();
+    }
 
-nav ul li {
-    display: inline-flex;
-    margin: 0 15px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: large;
-    position: relative;
-    left: 20vw;
-    bottom: 4vw;
-}
+    // Close popup when close button is clicked
+    $(".close-btn").on("click", function () {
+        $("#studioPopup").hide();
+    });
 
-nav ul li a {
-    color: black;
-    text-decoration: none;
-}
+    // Close popup when clicking outside of it
+    $(window).on("click", function (event) {
+        if ($(event.target).is("#studioPopup")) {
+            $("#studioPopup").hide();
+        }
+    });
 
-#filter-button{
-    font-size: large;
-    text-decoration: none;
-    background-color: #B5ACFF;
-}
+    // Function to display owner contact info
+    function displayOwnerContactInfo(studioIndex) {
+        const selectedStudio = studioData[studioIndex];
+        const ownerPrimaryKey = selectedStudio.primaryKey;
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    right: 69vw; /* Adjust based on your layout */
-    top: 1vw;
-    width: 30%; /* Adjust to your preferred width */
-    height: 90%; /* Keeps the height at 90% of the viewport */
-    overflow-y: auto; /* Enables vertical scrolling when content overflows */
-    padding: 20px; /* Optional, for some spacing inside the modal */
-    box-sizing: border-box; /* Ensure padding is included in the width and height */
-    background-color: white; /* Background color for better contrast */
-    border-radius: 10px; /* Optional, adds rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional, adds a shadow effect */
-}
+        const owner = signedUpUsers.find((user) => user.email === ownerPrimaryKey);
 
+        if (owner) {
+            $("#contactInformation p").html(`
+                <strong>Owner's Contact Information:</strong><br>
+                Name: ${owner.name}<br>
+                Email: ${owner.email}<br>
+                Phone: ${owner.phone}
+            `);
+        } else {
+            $("#contactInformation p").html(`
+                <strong>Owner's Contact Information:</strong><br>
+                Information not available.
+            `);
+        }
+    }
 
-.modal-content {
-    background-color: #fefefe;
-   
-    padding: 20px;
-    border: 1px solid #888;
-   
-    width: 90%;
-   
-    padding: 20px;
-    background-color: #dedbe3;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-#filterModel{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    background-color: #fff;
-    position:fixed;
-    background-color: #9e0c0c;
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
+    // Set up the studio filter modal
+    function setupStudioFilter() {
+        $("#filter-button").on("click", function () {
+            $("#filterModal").toggle();
+        });
 
-.close:hover {
-    color: black;
-}
+        $(".close").on("click", function () {
+            $("#filterModal").hide();
+        });
 
-#filterForm label {
-    display: block;
-    margin-top: 10px;
-}
+        $("#filterForm").on("submit", function (event) {
+            event.preventDefault();
 
-#filterForm input, #filterForm select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-}
+            const filters = {
+                name: $("#name").val().trim().toLowerCase(),
+                address: $("#address").val().trim().toLowerCase(),
+                type: $("#type").val().toLowerCase(),
+                parking: $("#parking").val().toLowerCase(),
+                publicTransport: $("#publicTransport").val().toLowerCase(),
+                availability: $("#availability").val().toLowerCase(),
+                area: parseInt($("#area").val()) || 0,
+            };
 
-#filterForm button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+            filterStudios(filters); // Apply filters
+            $("#filterModal").hide();
+            $("#reset-filters").show(); // Show the reset button
+        });
 
-#filterForm button:hover {
-    background-color: darkgreen;
-}
+        // Reset filters and show all studios
+        $("#reset-filters").on("click", function () {
+            $(".studio-card").show(); // Show all studio cards
+            $("#reset-filters").hide(); // Hide the reset button
+            $("#filterForm")[0].reset(); // Reset the filter form
+        });
+    }
 
-/* Footer */
-footer {
-    background-color: rgb(181, 172, 255);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-}
-
-footer strong {
-    color: #04AA6D;
-}
-
-
-#search{
-    position: relative;
-    top: 6.5vw;
+    function filterStudios(filters) {
+        const $studioCards = $(".studio-card"); // Get all studio cards from the DOM
     
-}
+        $studioCards.each(function () {
+            const $studioCard = $(this);
+            const studioIndex = $studioCard.data("index");
+            const studio = studioData[studioIndex];
+    
+            if (!studio) return;
+    
+            console.log("Studio Card:", $studioCard);
+            console.log("Studio Index:", studioIndex);
+            console.log("Studio Data:", studio);
+    
+            // Ensure correct filter conditions
+            const matchesName = !filters.name || studio.name.toLowerCase().includes(filters.name);
+            const matchesAddress = !filters.address || studio.address.toLowerCase().includes(filters.address);
+            const matchesType = !filters.type || studio.type.toLowerCase() === filters.type;
+            const matchesParking = !filters.parking || studio.parking.toLowerCase() === filters.parking;
+            const matchesPublicTransport = !filters.publicTransport || studio.publicTransport.toLowerCase() === filters.publicTransport;
+            const matchesAvailability = !filters.availability || studio.availability.toLowerCase() === filters.availability;
+            const matchesArea = !filters.area || studio.area >= filters.area;
+    
+            // Check if any filter matches
+            const hasFilters = Object.values(filters).some(filter => filter);
+            const isMatch = !hasFilters || (matchesName || matchesAddress || matchesType || matchesParking || matchesPublicTransport || matchesAvailability || matchesArea);
+    
+            console.log("Is Match:", isMatch);
+    
+            // Show or hide studio based on match
+            $studioCard.toggle(isMatch);
+        });
+    }
+    
+    // Initialize the filter functionality
+    setupStudioFilter();
 
-.search-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    left: 25%;
-  
-}
-
-/* Styling for the search box */
-#search-box {
-    padding: 10px;
-    width: 50%;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 16px;
-   
-   
-}
-
-
-/* Popup Modal */
-.popup-modal {
-    display: hidden; /* Keeps it hidden initially */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Popup Content */
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    width: 90%;
-    max-height: 90%;
-    overflow-y: auto; /* Enables scrolling if content overflows */
-    text-align: center;
-    position: relative;
-    border: 5px solid rgb(181, 172, 255); /* Reduced border size for better aesthetics */
-    position: relative;
-left: 25vw;
-}
-
-/* Close Button */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 35px;
-    cursor: pointer;
-    color: black;
-}
-
-.close-btn:hover {
-    color: #9e0c0c;
-}
-
-/* Popup Image */
-.popup-content img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-/* Table Styling */
-.popup-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-
-.popup-content th, .popup-content td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.popup-content th {
-    background-color: #f4f4f4;
-    width: 40%;
-}
-
-/* Contact Information */
-#contactInformation {
-    text-align: left;
-    margin-top: 15px;
-}
-
-#contactInformation p {
-    font-size: 1.1em;
-    color: #333;
-    font-weight: bold;
-}
+    // Render initial studio data
+   // renderStudioData(studioData);
+});
