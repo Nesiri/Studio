@@ -101,7 +101,7 @@ function adjustStyles() {
        })
        
        $(".right").css({
-        background: "linear-gradient(hsla(0, 80.50%, 36.30%, 0.50), hsla(353, 85.00%, 50.20%, 0.46)), url('../web/01/15.png')",
+        background: "linear-gradient(hsla(0, 80.50%, 36.30%, 0.50), hsla(353, 85.00%, 50.20%, 0.46)), url('01/15.png')",
         "background-size": "cover"
     })
       
@@ -204,7 +204,7 @@ function adjustStyles() {
        })
        
        $(".right").css({
-        background: "linear-gradient(hsla(142, 74.40%, 45.90%, 0.50), hsla(156, 85.00%, 50.20%, 0.46)), url('../web/01/15.png')",
+        background: "linear-gradient(hsla(142, 74.40%, 45.90%, 0.50), hsla(156, 85.00%, 50.20%, 0.46)), url('01/15.png')",
         "background-size": "cover"
     })
       
