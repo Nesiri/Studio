@@ -45,6 +45,11 @@ function adjustStyles() {
             "font-size": "2vw"  
         });
 
+
+        $("header").css({
+
+            "max-height" :"5vw"
+          })
         $("h1").css({
             position: "relative",
             top: "20px",
@@ -70,38 +75,45 @@ function adjustStyles() {
         });
 
         $("#brandphoto").css({
-            width: "30px",
-            height: "30px",
+            width: "50px",
+            height: "50px",
           
         });
 
      
         
-       $("input[type=text],input[type=email]").css({
+        
+        $("input[type=text],input[type=email]").css({
+            display :"block",
+            width:"45vw",
+            position:"relative",
+            right:"10px"
+   
+         })
+  
+         $("input[type=tel]").css({
           display :"block",
-          width:"40vw",
+          width:"30vw",
           position:"relative",
-          right:"30px"
- 
-       })
+          right:"10px"
+         })
+          
+         $("#signUp select").css({
+          display :"block",
+          width:"15vw",
+          position:"relative",
+          right:"5px"
+          
+         })
 
-       $("input[type=tel]").css({
-        display :"block",
-        width:"30vw",
-        position:"relative",
-        right:"30px"
-       })
-        
-       $("#signUp select").css({
-        display :"block",
-        width:"15vw",
-        position:"relative",
-        right:"20px"
-        
-       })
-       
-     
-      
+         $(".gallery").css({
+
+            position :"relative",
+            top:"50px"
+         })
+        $("footer").css({
+            "max-height":"20vw"
+        })
 
     } else if (width > 320 && width <= 480) { // For larger mobile screens
         $("#show-signup").click(function (e) {
@@ -128,12 +140,6 @@ function adjustStyles() {
             "height": "90vh"
         });
 
-      $("header").css({
-
-        "max-height" :"3vw"
-      })
-
-
         $(".left").css({
             "width": "100%",  
             "height": "auto",  
@@ -151,6 +157,11 @@ function adjustStyles() {
             "font-size": "2vw"  
         });
 
+
+        $("header").css({
+
+            "max-height" :"5vw"
+          })
         $("h1").css({
             position: "relative",
             top: "20px",
@@ -176,35 +187,45 @@ function adjustStyles() {
         });
 
         $("#brandphoto").css({
-            width: "40px",
-            height: "40px",
+            width: "50px",
+            height: "50px",
           
         });
 
      
         
-       $("input[type=text],input[type=email]").css({
+        
+        $("input[type=text],input[type=email]").css({
+            display :"block",
+            width:"45vw",
+            position:"relative",
+            right:"10px"
+   
+         })
+  
+         $("input[type=tel]").css({
           display :"block",
-          width:"45vw",
+          width:"30vw",
           position:"relative",
           right:"10px"
- 
-       })
+         })
+          
+         $("#signUp select").css({
+          display :"block",
+          width:"15vw",
+          position:"relative",
+          right:"5px"
+          
+         })
 
-       $("input[type=tel]").css({
-        display :"block",
-        width:"30vw",
-        position:"relative",
-        right:"10px"
-       })
-        
-       $("#signUp select").css({
-        display :"block",
-        width:"15vw",
-        position:"relative",
-        right:"5px"
-        
-       })
+         $(".gallery").css({
+
+            position :"relative",
+            top:"50px"
+         })
+        $("footer").css({
+            "max-height":"20vw"
+        })
        
      
       
