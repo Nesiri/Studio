@@ -1,7 +1,7 @@
 function adjustStyles() {
     let width = $(window).width();
     
-  // alert("Current width:" + width); 
+   alert("Current width:" + width); 
 
     if (width <= 320) { // For smallest mobile screens
         $("#show-signup").click(function (e) {
@@ -100,10 +100,7 @@ function adjustStyles() {
         
        })
        
-       $(".right").css({
-        background: "linear-gradient(hsla(0, 80.50%, 36.30%, 0.50), hsla(353, 85.00%, 50.20%, 0.46)), url('01/15.png')",
-        "background-size": "cover"
-    })
+     
       
 
     } else if (width > 320 && width <= 480) { // For larger mobile screens
@@ -130,6 +127,12 @@ function adjustStyles() {
             "flex-direction": "column",
             "height": "90vh"
         });
+
+      $("header").css({
+
+        "max-height" :"3vw"
+      })
+
 
         $(".left").css({
             "width": "100%",  
@@ -182,9 +185,9 @@ function adjustStyles() {
         
        $("input[type=text],input[type=email]").css({
           display :"block",
-          width:"40vw",
+          width:"45vw",
           position:"relative",
-          right:"30px"
+          right:"10px"
  
        })
 
@@ -192,21 +195,18 @@ function adjustStyles() {
         display :"block",
         width:"30vw",
         position:"relative",
-        right:"30px"
+        right:"10px"
        })
         
        $("#signUp select").css({
         display :"block",
         width:"15vw",
         position:"relative",
-        right:"20px"
+        right:"5px"
         
        })
        
-       $(".right").css({
-        background: "linear-gradient(hsla(142, 74.40%, 45.90%, 0.50), hsla(156, 85.00%, 50.20%, 0.46)), url('01/15.png')",
-        "background-size": "cover"
-    })
+     
       
        
 
@@ -253,6 +253,11 @@ function adjustStyles() {
             "font-size": "2vw"  
         });
 
+
+        $("header").css({
+
+            "max-height" :"5vw"
+          })
         $("h1").css({
             position: "relative",
             top: "20px",
@@ -285,29 +290,38 @@ function adjustStyles() {
 
      
         
-       $("input[type=text],input[type=email]").css({
+        
+        $("input[type=text],input[type=email]").css({
+            display :"block",
+            width:"45vw",
+            position:"relative",
+            right:"10px"
+   
+         })
+  
+         $("input[type=tel]").css({
           display :"block",
-          width:"40vw",
+          width:"30vw",
           position:"relative",
-          right:"30px"
- 
-       })
+          right:"10px"
+         })
+          
+         $("#signUp select").css({
+          display :"block",
+          width:"15vw",
+          position:"relative",
+          right:"5px"
+          
+         })
 
-       $("input[type=tel]").css({
-        display :"block",
-        width:"30vw",
-        position:"relative",
-        right:"30px"
-       })
-        
-       $("#signUp select").css({
-        display :"block",
-        width:"15vw",
-        position:"relative",
-        right:"20px"
-        
-       })
-       
+         $(".gallery").css({
+
+            position :"relative",
+            top:"50px"
+         })
+        $("footer").css({
+            "max-height":"20vw"
+        })
        
 
     } else if (width > 768 && width <= 1024) { // For larger tablets and smallest laptops

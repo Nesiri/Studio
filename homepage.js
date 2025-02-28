@@ -89,7 +89,7 @@ $(document).ready(function () {
                     const countryAbbreviation = country.cca3; 
                    
                     option.value = country.idd.root + (country.idd.suffixes ? country.idd.suffixes[0] : "");
-                    option.textContent = `${countryAbbreviation} (${option.value})`;
+                    option.textContent = `${option.value}`;
 
                   
                     if (countryAbbreviation === "CAN") {
