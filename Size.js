@@ -100,7 +100,10 @@ function adjustStyles() {
         
        })
        
-       
+       $(".right").css({
+        background: "linear-gradient(hsla(0, 80.50%, 36.30%, 0.50), hsla(353, 85.00%, 50.20%, 0.46)), url('../web/01/15.png')",
+        "background-size": "cover"
+    })
       
 
     } else if (width > 320 && width <= 480) { // For larger mobile screens
@@ -200,7 +203,11 @@ function adjustStyles() {
         
        })
        
-       
+       $(".right").css({
+        background: "linear-gradient(hsla(142, 74.40%, 45.90%, 0.50), hsla(156, 85.00%, 50.20%, 0.46)), url('../web/01/15.png')",
+        "background-size": "cover"
+    })
+      
        
 
     } else if (width > 480 && width <= 768) { // For smallest tablets
