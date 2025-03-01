@@ -260,97 +260,6 @@ footer p{
 @media (max-width: 320px) {
  
 
-  header {
-    height: 30vw !important;
-    background: red;
-  }
-
-  header img {
-  height: 20vw;
-}
-  body{
-   background: red;
-    font-size: 5vw !important;
-  }
-
-  footer{
-     height: 10vw !important;
-  }
-  footer p{
-     
-    position: relative;
-    bottom: 10px;
-  }
-
-  main{
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-   
-    
-  }
-.left{
-  order: 1;
- 
-  
-}
-.right{
-  order: 2;
- position: relative;
-
-}
-  .gallery {
-      position: relative;
-      top: 50px;
-    
-  }
-
-  .image {
-    position: relative;
-    right: 10px;
-    width: 30vw;
-    height: auto;
-    
-  
-  }
-
- 
-
-  input[type=text],
-  input[type=email] {
-      width: 80vw !important;
-   
-  }
-
-  input[type=tel] {
-      width: 100vw;
-     
-  }
-
-  #signUp select {
-      width: 15vw;
-      
-  }
- 
-  #logIn button{
-    margin-top: 10px;
-    width: 80vw !important;
-     background-color: red;
-  
-  }
-
-  .signup-form ,.login-form {
-   margin-left: 10px;
-    padding: 20px;
-    width: 100%;
-    text-align: center;
-   
-    
-  }
-}
-
-@media (min-width: 321px) and (max-width: 480px) {
- 
  body{
    height: 100dvh;
     font-size: 5vw !important;
@@ -369,7 +278,7 @@ footer p{
      height: 10vw !important;
   }
   footer p{
-      color:red;
+     
     position: relative;
     bottom: 10px;
   }
@@ -398,9 +307,8 @@ footer p{
   }
 
   .image {
-    position: relative;
    
-    width: 5vw;
+    width: 15vw !important ;
     height: auto;
     
   
@@ -415,7 +323,96 @@ footer p{
   }
 
   input[type=tel] {
-      width: 120vw !important;
+      width: 100vw !important;
+     
+  }
+
+  #signUp select {
+      width: 15vw;
+      
+  }
+ 
+  #logIn button{
+    margin-top: 10px;
+    width: 80vw !important;
+     background-color: yellow;
+  
+  }
+
+  .signup-form ,.login-form {
+   margin-left: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+   
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+ 
+ body{
+   height: 100dvh;
+    font-size: 5vw !important;
+ }
+ header {
+    height: 100px !important; /* Adjust as needed */
+    background: green;
+}
+
+
+  header img {
+  height: 10vw;
+}
+
+  footer{
+     height: 10vw !important;
+  }
+  footer p{
+     
+    position: relative;
+    bottom: 10px;
+  }
+
+  main{
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+   
+    
+  }
+.left{
+  order: 1;
+ 
+  
+}
+.right{
+  order: 2;
+ position: relative;
+
+}
+  .gallery {
+      position: relative;
+      top: 40px;
+    
+  }
+
+  .image {
+   
+    width: 15vw !important ;
+    height: auto;
+    
+  
+  }
+
+ 
+
+  input[type=text],
+  input[type=email] {
+      width: 80vw !important;
+   
+  }
+
+  input[type=tel] {
+      width: 100vw !important;
      
   }
 
