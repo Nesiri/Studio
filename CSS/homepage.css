@@ -351,19 +351,18 @@ footer p{
 
 @media (min-width: 321px) and (max-width: 480px) {
  
-
+ body{
+   height: 100dvh;
+    font-size: 5vw !important;
+ }
  header {
-    height: 30vw !important;
+    height: 40vw !important;
     background: red;
   }
 
   header img {
-  height: 20vw;
+  height: 10vw;
 }
-  body{
-   background: red;
-    font-size: 5vw !important;
-  }
 
   footer{
      height: 10vw !important;
@@ -393,14 +392,14 @@ footer p{
 }
   .gallery {
       position: relative;
-      top: 50px;
+      top: 40px;
     
   }
 
   .image {
     position: relative;
     right: 10px;
-    width: 30vw;
+    width: 15vw;
     height: auto;
     
   
