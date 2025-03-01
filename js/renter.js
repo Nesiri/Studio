@@ -24,6 +24,7 @@ $(document).ready(function () {
             if (clickedStudio) {
                 openPopup(clickedStudio.index);
                 displayOwnerContactInfo(clickedStudio.index);
+               
             }
         }
     });

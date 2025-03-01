@@ -7,8 +7,7 @@
 body {
     background-color: #f4f4f4;
     color: #333;
-    border-right: 10px solid rgb(181, 172, 255);
-    border-left: 10px solid rgb(181, 172, 255);
+ 
 }
 
 body main {
@@ -18,6 +17,26 @@ min-height:89vh;
 
 }
 
+
+:root{
+
+    --purple :#C5BDFF;
+  }
+  
+  /* Header Styles */
+  header {
+    display: flex;
+    height: 90px;
+    padding: 0 6.5%;
+    background-color: var(--purple);
+    align-items: center;
+   
+  }
+  
+  header img {
+    height: 3.5vw;
+  }
+/*
 #brandphoto {
     width: 5%;
     height: auto;
@@ -53,9 +72,12 @@ header h2 {
     color: #000000;
     text-align: center;
     margin-bottom: 20px;
-}
+}*/
 
 nav ul {
+    position: relative;
+    top:50px;
+    left: 40vw;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -66,9 +88,7 @@ nav ul li {
     margin: 0 15px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
-    position: relative;
-    left: 20vw;
-    bottom: 4vw;
+  
 }
 
 nav ul li a {
@@ -247,6 +267,23 @@ footer strong {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+
+footer {
+    background-color: var(--purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 2%;
+    text-align: center;
+    height: 5vw;
+  }
+   footer p{
+    position: relative;
+    bottom: 20px;
+   }
+  
+ 
 
 
 

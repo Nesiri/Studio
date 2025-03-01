@@ -102,3 +102,6 @@ $(document).ready(function () {
         })
         .catch(error => console.error("Error fetching country codes:", error));
 });
+
+let time = document.getElementById("timestamp");
+time.innerText = new Date().getFullYear();

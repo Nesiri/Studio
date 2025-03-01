@@ -8,8 +8,7 @@
 body {
     background-color: #f4f4f4;
     color: #333;
-    border-right: 10px solid rgb(181, 172, 255);
-    border-left: 10px solid rgb(181, 172, 255);
+  
     overflow-x: hidden;
 }
 

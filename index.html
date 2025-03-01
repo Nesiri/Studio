@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artnest Studio Login</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="CSS/homepage.css">
 </head>
 <body>
     <header>
-      <div class="logo">
-        <img src="brandphoto.png" id="brandphoto" alt="">
-        <h1> <em><span style="color: green;">A</span>RT<span style="color: green;">N</span>EST</em></h1>
-        <h2>STUDIO</h2>
-      </div>
-      <nav>
-        <a href="#home">HOME</a>
-        
-      </nav>
+     
+        <a href="#"><img src="logo.png" alt="ArtNest Studio Logo"></a>
+    
+     
     </header>
     
     <main>
@@ -42,10 +37,12 @@
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required>
             <div class="remember-me">
-              <input type="checkbox" id="remember">
-              <label for="remember">Remember me</label>
+             
+              <label for="remember"> <input type="checkbox" id="remember">
+                Remember me
+              </label>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" class="button">Login</button>
             <p>New? <a href="#" id="show-signup">Click Sign up</a></p>
           </form>
         </section>
@@ -69,24 +66,21 @@
                </div>
              
         
-              <button type="submit">Sign Up</button>
-               <a href="#" id="show-login">Already have an account?</a>
+              <button type="submit" class="button">Sign Up</button>
+              <p><a href="#" id="show-login">Already have an account?</a></p>
             </form>
         </section>
       </div>
+     
     </main>
-    
-    <footer>
+    <div id="footerImage">
       <img src="04/6.png" alt="Footer Image">
-      <div class="social-links">
-        <a href="#instagram">Instagram</a>
-        <a href="#linkedin">LinkedIn</a>
-        <a href="#twitter">Twitter</a>
-        <a href="#facebook">Facebook</a>
-      </div>
+    </div>
+    <footer > 
+      <p>Copyright &copy; <span id="timestamp"></span>, ArtNest Studio<p> 
     </footer>
-
-    <script src="homepage.js"></script>
-     <script src="Size.js"></script>
+    
+    <script src="js/homepage.js"></script>
+    <script src="js/homeSize.js"></script>
   </body>
 </html>
