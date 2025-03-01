@@ -1,30 +1,57 @@
 function adjustStyles() {
     let width = $(window).width();
     
-   // alert("Current width:" + width); 
+    alert("Current width:" + width); 
 
     if (width <= 320) { // For smallest mobile screens
         $("#show-signup").click(function (e) {
             e.preventDefault();  
+            $(".left").hide();  
+    
+           
+            $(".right").show(); 
         });
         $("#show-login").click(function (e) {
             e.preventDefault(); 
+            
+            $(".left").show(); 
+    
+            
+            $(".right").show();  
         });
 
     } else if (width > 320 && width <= 480) { // For larger mobile screens
         $("#show-signup").click(function (e) {
             e.preventDefault();  
+            $(".left").hide();  
+    
+           
+            $(".right").show(); 
         });
         $("#show-login").click(function (e) {
             e.preventDefault(); 
+            
+            $(".left").show(); 
+    
+            
+            $(".right").show();  
         });
 
     } else if (width > 480 && width <= 768) { // For smallest tablets
         $("#show-signup").click(function (e) {
             e.preventDefault();  
+            $(".left").hide();  
+    
+           
+            $(".right").show(); 
         });
         $("#show-login").click(function (e) {
             e.preventDefault(); 
+            
+            $(".left").show(); 
+    
+            
+            $(".right").show();  
         });
 
     } else if (width > 768 && width <= 1024) { // For larger tablets and smallest laptops
