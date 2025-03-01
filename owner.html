@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Owner HTML</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../CSS/owner.css">
+  <link rel="stylesheet" href="../CSS/renter.css">
+ 
+  
+   
+   
+  
+</head>
+<body>
+    <header>
+        <a href="#"><img src="logo.png" alt="ArtNest Studio Logo"></a>
+        <nav id="navList">
+            <ul>
+                <li><a href="#formSection">Manage Studio</a></li>
+                
+                <li><a href="profile.html" id="about-button">Profile</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+ <main>
+    <!-- Display Studio Listings -->
+    <section id="displaySection">
+        <div class="container">
+            
+
+            <div class="grid-container" id="studioList">
+                <!-- Studios will be added dynamically here -->
+            </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <!-- Popup Modal -->
+        <div id="studioPopup" class="popup-modal">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h1 id="popupTitle"></h1>
+                <img id="popupImage">
+    
+                <!-- Studio Details Table -->
+                <table >
+                    <tr>
+                        <th>Name:</th>
+                        <td id="name"></td>
+                    </tr>
+                    <tr>
+                        <th>Type:</th>
+                        <td id="type"></td>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <td id="popupAddress"></td>
+                    </tr>
+                    <tr>
+                        <th>Area:</th>
+                        <td id="popupArea"></td>
+                    </tr>
+                    <tr>
+                        <th>Parking:</th>
+                        <td id="parking"></td>
+                    </tr>
+                    <tr>
+                        <th>Capacity:</th>
+                        <td id="popupCapacity"></td>
+                    </tr>
+                    <tr>
+                        <th>Availability:</th>
+                        <td id="availability"></td>
+                    </tr>
+                    <tr>
+                        <th>Public Transport:</th>
+                        <td id="Transport"></td>
+                    </tr>
+                    <tr>
+                        <th>Term</th>
+                        <th >Price</th>
+                    </tr>
+                    <tr class="term">
+                        <td>hourly</td>
+                        <td class="price">1</td>
+                    </tr>
+                    <tr class="term">
+                        <td>Daily</td>
+                        <td class="price">2</td>
+                    </tr>
+                    <tr class="term">
+                        <td>Weekly</td>
+                        <td class="price">3</td>
+                    </tr>
+                    <tr class="term">
+                        <td>Monthly</td>
+                        <td class="price">4</td>
+                    </tr>
+                       
+                    
+                </table>
+
+                <div id="contactInformation">
+                    <p><strong>Contact Information:</strong></p> <!-- Contact details will be updated here -->
+                </div>
+                
+    
+               
+            </div>
+        </div>
+    </section>
+   
+     <!-- Add Studio Form Section -->
+<section id="formSection">
+    <div class="container">
+        <form id="addStudioForm">
+            <h2>Add New Studio</h2>
+            <div class="input-group">
+                <label for="studioName">Studio Name</label>
+                <input type="text" id="studioName" required>
+            </div>
+            <div class="input-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" required>
+            </div>
+            <div class="input-group">
+                <label for="area">Area (sqm)</label>
+                <input type="number" id="area" required>
+            </div>
+            <div class="input-group">
+                <label for="studioType">Studio Type</label>
+                <select id="studioType" name="type">
+                  
+                    <option value="art studio">Art Studio</option>
+                    <option value="recording studio">Recording Studio</option>
+                    <option value="dance studio">Dance Studio</option>
+                    <option value="rehearsal space">Rehearsal Space</option>
+               </select>
+            </div>
+            <div class="input-group">
+                <label for="capacity">Capacity</label>
+                <input type="number" id="capacity" required>
+            </div>
+            <div class="input-group">
+                <label for="parking">Parking</label>
+                <select id="parking" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="publicTransport">Public Transport</label>
+                <select id="publicTransport" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="availability">Availability</label>
+                <select id="availability" required>
+                    <option value="available">Available</option>
+                    <option value="not available">Not Available</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="badge">Studio Badge</label> 
+                <select id="badge" required>  
+                    <option value="Popular">Popular</option>
+                    <option value="Featured">Featured</option>
+                </select>
+            </div>
+            
+            
+            <div class="input-group">
+                <label>Prices</label>
+                <div>
+                    <label>
+                        <input type="number" name="hourlyPrice" placeholder="Price" min="0">
+                        <input type="checkbox" name="rentalTerm" value="hourly"> Hourly
+                        
+                    </label>
+                    <label>
+                        <input type="number" name="dailyPrice" placeholder="Price" min="0">
+                        <input type="checkbox" name="rentalTerm" value="daily"> Daily
+                        
+                    </label>
+                    <label>
+                        <input type="number" name="weeklyPrice" placeholder="Price" min="0">
+                        <input type="checkbox" name="rentalTerm" value="weekly"> Weekly
+                       
+                    </label>
+                    <label>
+                        <input type="number" name="monthlyPrice" placeholder="Price" min="0">
+                        <input type="checkbox" name="rentalTerm" value="monthly"> Monthly
+                       
+                    </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="studioImages">Studio Images</label>
+                <input type="file" id="studioImages" name="studioImages" accept="image/*" multiple>
+            </div> 
+            
+          
+                <button type="submit">Add Studio</button>
+            
+          
+            
+                <script src="../js/owner.js"></script>
+                <script src="../js/renter.js"></script>
+            
+
+        </form>
+    </div>
+</section>
+    
+
+    
+</main>  
+<footer >
+      
+    <p>Copyright &copy; <span id="timestamp"></span>, ArtNest Studio<p>
+   
+    
+  </footer>
+
+    <script src="../js/owner.js"></script>
+    <script src="../js/renter.js"></script>
+   <script src="../js/Size.js"></script>
+</body>
+</html> 

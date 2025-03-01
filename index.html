@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artnest Studio Login</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/homepage.css">
+</head>
+<body>
+    <header>
+     
+        <a href="#"><img src="logo.png" alt="ArtNest Studio Logo"></a>
+    
+     
+    </header>
+    
+    <main>
+      <!-- Left side: Gallery -->
+      <div class="left">
+        <section class="gallery">
+          <div class="image-stack">
+            <img src="01/6.png" alt="Studio Image" class="image image1">
+            <img src="01/7.png" alt="Studio Image" class="image image2">
+            <img src="04/9.png" alt="Studio Image" class="image image3">
+            <img src="01/10.png" alt="Studio Image" class="image image4">
+            <img src="01/10.png" alt="Studio Image" class="image image5">
+            <img src="01/11.png" alt="Studio Image" class="image image6">
+          </div>
+        </section>
+      </div>
+      
+      <!-- Right side: Login form -->
+      <div class="right">
+        <section class="login-form">
+          <form id="logIn">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="remember-me">
+             
+              <label for="remember"> <input type="checkbox" id="remember">
+                Remember me
+              </label>
+            </div>
+            <button type="submit" class="button">Login</button>
+            <p>New? <a href="#" id="show-signup">Click Sign up</a></p>
+          </form>
+        </section>
+        <section class="signup-form" id="signup-form" style="display: none;">
+            <form id="signUp">
+              <label for="fullname">Full Name:</label>
+              <input type="text" id="fullname" name="fullname" placeholder="Write your name" required>
+        
+              <label for="email-signup">E-mail:</label>
+              <input type="email" id="email-signup" name="email" placeholder="Write your email" required>
+              <label for="phone">Phone Number:</label>
+              <div class="phone-number-container">
+              <select id="countryCode"></select>
+                <input type="tel" id="phone" name="phone" placeholder="Input phone number" required>
+              </div>
+        
+               <div id="radio">
+                <input type="radio" name="role" value="owner"> Owner
+                <br>
+                <input type="radio" name="role" value="renter"> Renter
+               </div>
+             
+        
+              <button type="submit" class="button">Sign Up</button>
+              <p><a href="#" id="show-login">Already have an account?</a></p>
+            </form>
+        </section>
+      </div>
+     
+    </main>
+    <div id="footerImage">
+      <img src="04/6.png" alt="Footer Image">
+    </div>
+    <footer > 
+      <p>Copyright &copy; <span id="timestamp"></span>, ArtNest Studio<p> 
+    </footer>
+    
+    <script src="js/homepage.js"></script>
+    <script src="js/homeSize.js"></script>
+  </body>
+</html>
