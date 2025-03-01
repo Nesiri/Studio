@@ -399,7 +399,8 @@ footer p{
    
     width: 30vw !important ;
     height: auto;
-    
+    position: relative;
+    right: 15px;
   
   }
 
@@ -412,7 +413,7 @@ footer p{
   }
 
   input[type=tel] {
-      width: 65vw !important;
+      width: 60vw !important;
      
   }
   label{
@@ -421,7 +422,7 @@ footer p{
   }
   button{
     position: relative;
-    left: 20px;
+    left: 30px;
   }
 
   #signUp select {
