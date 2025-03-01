@@ -397,7 +397,7 @@ footer p{
 
   .image {
    
-    width: 15vw !important ;
+    width: 25vw !important ;
     height: auto;
     
   
@@ -412,7 +412,7 @@ footer p{
   }
 
   input[type=tel] {
-      width: 100vw !important;
+      width: 80vw !important;
      
   }
 
