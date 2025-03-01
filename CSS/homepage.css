@@ -356,9 +356,10 @@ footer p{
     font-size: 5vw !important;
  }
  header {
-    height: 100vw !important;
+    height: 100px !important; /* Adjust as needed */
     background: green;
-  }
+}
+
 
   header img {
   height: 10vw;
@@ -414,7 +415,7 @@ footer p{
   }
 
   input[type=tel] {
-      width: 150vw !important;
+      width: 120vw !important;
      
   }
 
