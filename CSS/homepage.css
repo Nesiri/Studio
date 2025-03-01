@@ -262,13 +262,14 @@ footer p{
 
   header {
     height: 30vw !important;
+    background: red;
   }
 
   header img {
   height: 20vw;
 }
   body{
-
+   background: red;
     font-size: 5vw !important;
   }
 
@@ -276,7 +277,7 @@ footer p{
      height: 10vw !important;
   }
   footer p{
-
+      color:red;
     position: relative;
     bottom: 10px;
   }
