@@ -351,11 +351,16 @@ footer p{
 @media (min-width: 321px) and (max-width: 480px) {
  
 
-  header {
-    height: 40vw !important;
+ header {
+    height: 30vw !important;
+    background: red;
   }
-  body{
 
+  header img {
+  height: 20vw;
+}
+  body{
+   background: red;
     font-size: 5vw !important;
   }
 
@@ -363,7 +368,7 @@ footer p{
      height: 10vw !important;
   }
   footer p{
-
+      color:red;
     position: relative;
     bottom: 10px;
   }
@@ -392,7 +397,9 @@ footer p{
   }
 
   .image {
-    width: 50vw;
+    position: relative;
+    right: 10px;
+    width: 30vw;
     height: auto;
     
   
@@ -407,7 +414,7 @@ footer p{
   }
 
   input[type=tel] {
-      width: 80vw;
+      width: 100vw;
      
   }
 
@@ -430,8 +437,6 @@ footer p{
    
     
   }
-}
-
 @media (min-width: 481px) and (max-width: 768px) {
   header {
     height: 12vw;
