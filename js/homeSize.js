@@ -1,7 +1,7 @@
 function adjustStyles() {
     let width = $(window).width();
     
-    alert("Current width:" + width); 
+   // alert("Current width:" + width); 
 
     if (width <= 320) { // For smallest mobile screens
         $("#show-signup").click(function (e) {
