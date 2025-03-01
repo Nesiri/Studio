@@ -260,14 +260,63 @@ footer p{
 @media (max-width: 320px) {
  
 
+  header {
+    height: 40vw !important;
+  }
+  body{
+
+    font-size: 5vw !important;
+  }
+
+  footer{
+     height: 10vw !important;
+  }
+  footer p{
+
+    position: relative;
+    bottom: 10px;
+  }
+
+  main{
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+   
+    
+  }
+.left{
+  order: 1;
+ 
+  
+}
+.right{
+  order: 2;
+ position: relative;
+
+}
+  .gallery {
+      position: relative;
+      top: 50px;
+    
+  }
+
+  .image {
+    width: 50vw;
+    height: auto;
+    
+  
+  }
+
+ 
+
   input[type=text],
   input[type=email] {
-      width: 40vw;
-     
+      width: 80vw !important;
+   
   }
 
   input[type=tel] {
-      width: 30vw;
+      width: 80vw;
      
   }
 
@@ -275,13 +324,28 @@ footer p{
       width: 15vw;
       
   }
+ 
+  #logIn button{
+    margin-top: 10px;
+    width: 80vw !important;
+  
+  }
+
+  .signup-form ,.login-form {
+   margin-left: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+   
+    
+  }
 }
 
 @media (min-width: 321px) and (max-width: 480px) {
  
 
   header {
-    height: 40vw;
+    height: 40vw !important;
   }
   body{
 
