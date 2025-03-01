@@ -306,14 +306,13 @@ footer p{
   }
 .left{
   order: 1;
-  position: relative;
-  bottom: 5vw;
+ 
   
 }
 .right{
   order: 2;
  position: relative;
- bottom: 20px;
+
 }
   .gallery {
       position: relative;
@@ -322,7 +321,7 @@ footer p{
   }
 
   .image {
-    width: 30vw;
+    width: 50vw;
     height: auto;
     
   
@@ -332,12 +331,12 @@ footer p{
 
   input[type=text],
   input[type=email] {
-      width: 100vw !important;
+      width: 80vw !important;
    
   }
 
   input[type=tel] {
-      width: 100vw;
+      width: 80vw;
      
   }
 
@@ -348,12 +347,12 @@ footer p{
  
   #logIn button{
     margin-top: 10px;
-    width: 70vw !important;
+    width: 80vw !important;
   
   }
 
   .signup-form ,.login-form {
- 
+   margin-left: 10px;
     padding: 20px;
     width: 100%;
     text-align: center;
