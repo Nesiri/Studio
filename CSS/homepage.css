@@ -346,7 +346,7 @@ footer p{
     text-align: center;
    
 }
-
+}
 @media (min-width: 321px) and (max-width: 480px) {
  
  body{
@@ -424,7 +424,7 @@ footer p{
   #logIn button{
     margin-top: 10px;
     width: 80vw !important;
-     background-color: yellow;
+    
   
   }
 
@@ -436,6 +436,7 @@ footer p{
    
     
   }
+}
 @media (min-width: 481px) and (max-width: 768px) {
   header {
     height: 12vw;
@@ -506,7 +507,7 @@ footer p{
   #logIn button{
     margin-top: 10px;
     width: 70vw !important;
-     background-color: red;
+  
   
   }
 
