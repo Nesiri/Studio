@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
- font-size: 20px;
+ 
 
   display: flex;
   flex-direction: column;
@@ -44,16 +44,18 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(200, 200, 200, 0.3), rgba(200, 200, 200, 0.3)), url('01/15.png');
+  background: linear-gradient(rgba(200, 200, 200, 0.3), rgba(200, 200, 200, 0.3)), url('../01/15.png');
   background-position: center;
+ 
 }
 
 .right {
+
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('01/15.png');
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../01/15.png');
   background-size: cover;
   background-position: center;
 }
@@ -89,17 +91,20 @@ main {
 
 
 /* Form Styles (Login and Signup) */
-.signup-form, .login-form {
+.signup-form ,.login-form {
+ 
   padding: 20px;
   width: 50%;
   text-align: center;
-  font-size: clamp(1.5em, calc(1vw + 1em), 1em);
+ 
+  
 }
 #signup-form{
 
- position: relative;
- top: 1px;
- right: 10vw;
+position: relative;
+right: 10vw;
+
+ 
 }
 
 
@@ -189,12 +194,12 @@ button {
   color: white;
   padding: 1em 2em;
   cursor: pointer;
-  width: 50%;
+  width: 100%;
   height: calc(10px + 2vw);
   border-radius: 1000px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
-  left: 15vw;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,11 +281,15 @@ footer p{
  
 
   header {
-    height: 15vw;
+    height: 40vw;
+  }
+  body{
+
+    font-size: 5vw !important;
   }
 
   footer{
-     height: 5vw;
+     height: 10vw !important;
   }
   footer p{
 
@@ -303,7 +312,8 @@ footer p{
 }
 .right{
   order: 2;
- 
+ position: relative;
+ bottom: 20px;
 }
   .gallery {
       position: relative;
@@ -312,8 +322,9 @@ footer p{
   }
 
   .image {
-    width: 20vw;
+    width: 30vw;
     height: auto;
+    
   
   }
 
@@ -321,12 +332,12 @@ footer p{
 
   input[type=text],
   input[type=email] {
-      width: 50vw;
+      width: 100vw !important;
    
   }
 
   input[type=tel] {
-      width: 50vw;
+      width: 100vw;
      
   }
 
@@ -334,15 +345,30 @@ footer p{
       width: 15vw;
       
   }
-  button{
+ 
+  #logIn button{
     margin-top: 10px;
-    width: 60%;
+    width: 70vw !important;
+  
+  }
+
+  .signup-form ,.login-form {
+ 
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+   
+    
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   header {
-    height: 15vw;
+    height: 12vw;
+  }
+  body{
+
+    font-size: 2.5vw !important;
   }
 
   footer{
@@ -369,7 +395,8 @@ footer p{
 }
 .right{
   order: 2;
- 
+ position: relative;
+ bottom: 20px;
 }
   .gallery {
       position: relative;
@@ -380,6 +407,7 @@ footer p{
   .image {
     width: 17vw;
     height: auto;
+    
   
   }
 
@@ -387,12 +415,12 @@ footer p{
 
   input[type=text],
   input[type=email] {
-      width: 45vw;
+      width: 70vw !important;
    
   }
 
   input[type=tel] {
-      width: 30vw;
+      width: 100vw;
      
   }
 
@@ -400,54 +428,168 @@ footer p{
       width: 15vw;
       
   }
-  button{
+ 
+  #logIn button{
     margin-top: 10px;
-    width: 60%;
+    width: 70vw !important;
+  
   }
+
+  .signup-form ,.login-form {
+ 
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+   
+    
+  }
+ 
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
  
 
+  body{
+    font-size: 1.5vw !important;
+    
+  }
+
   input[type=text],
   input[type=email] {
-      width: 35vw;
+      width: 25vw;
      
   }
 
   input[type=tel] {
-      width: 34vw;
-      right: 30px;
+      width: 50vw !important;
+    
+     
   }
 
   #signUp select {
-      width: 80px;
-      
+      width: 10vw !important;
+     
+  }
+ .left{
+
+  min-width: 50vw !important
+ }
+  #signUp{
+
+    position: relative;
+    right: 15vw;
+  }
+ 
+  
+#radio {
+
+  position: relative;
+  right: 10vw;
+
+ 
+}
+  button{
+  
+   position: relative;
+   right: 1vw !important;
+   width: 35vw !important;
+   
+  }
+
+  #logIn button{
+    margin-top: 10px;
+   
+    width: 35vw !important;
+  
+  }
+
+  label {
+    display: flex;
+
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    right: 25px;
+
+    font-family: 1vw;
+    
+  }
+
+  .image{
+   width: 15vw;
   }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {
  
 
+  body{
+    font-size: 1.5vw !important;
+    
+  }
+
   input[type=text],
   input[type=email] {
-      width: 30vw;
+      width: 25vw;
      
   }
 
   input[type=tel] {
-      width: 30vw;
+      width: 45vw !important;
     
+     
   }
 
   #signUp select {
-      width: 15vw;
-      right: 20px;
+      width: 10vw !important;
+     
+  }
+  
+#radio {
+
+  position: relative;
+  right: 10vw;
+
+ 
+}
+  button{
+  
+   position: relative;
+   right: 1vw !important;
+   width: 30vw !important;
+   
+  }
+
+  #logIn button{
+    margin-top: 10px;
+   
+    width: 30vw !important;
+  
+  }
+
+  label {
+    display: flex;
+
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    right: 25px;
+
+    font-family: 1vw;
+    
   }
 }
-
 @media (min-width: 1281px) and (max-width: 1440px) {
- 
+  body{
+    font-size: 2vw;
+    
+  }
 
   input[type=text],
   input[type=email] {
@@ -464,15 +606,51 @@ footer p{
       width: 15vw;
      
   }
+  
+#radio {
+
+  position: relative;
+  right: 10vw;
+
+ 
+}
+  button{
+  
+   position: relative;
+   right: 1vw !important;
+   
+  }
+  #logIn button{
+    margin-top: 10px;
+  
+  }
+
+  label {
+    display: flex;
+
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    right: 25px;
+    
+  }
+ 
 }
 
 @media (min-width: 1441px) {
  
+  body{
+    font-size: 2vw;
+    
+  }
 
   input[type=text],
   input[type=email] {
       width: 25vw;
-    
+     
   }
 
   input[type=tel] {
@@ -482,6 +660,37 @@ footer p{
 
   #signUp select {
       width: 15vw;
+     
+  }
+  
+#radio {
+
+  position: relative;
+  right: 10vw;
+
+ 
+}
+  button{
+  
+   position: relative;
+   right: 1vw !important;
+   
+  }
+  #logIn button{
+    margin-top: 10px;
+  
+  }
+
+  label {
+    display: flex;
+
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    right: 25px;
     
   }
 }
