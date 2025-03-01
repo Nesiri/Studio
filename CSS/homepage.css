@@ -397,7 +397,7 @@ footer p{
 
   .image {
    
-    width: 25vw !important ;
+    width: 30vw !important ;
     height: auto;
     
   
@@ -407,12 +407,12 @@ footer p{
 
   input[type=text],
   input[type=email] {
-      width: 80vw !important;
+      width: 70vw !important;
    
   }
 
   input[type=tel] {
-      width: 80vw !important;
+      width: 70vw !important;
      
   }
 
@@ -423,7 +423,7 @@ footer p{
  
   #logIn button{
     margin-top: 10px;
-    width: 80vw !important;
+    width: 65vw !important;
     
   
   }
@@ -435,6 +435,13 @@ footer p{
     text-align: center;
    
     
+  }
+
+   button{
+   
+    width: 65vw !important;
+    
+  
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
