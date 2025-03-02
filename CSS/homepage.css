@@ -399,8 +399,7 @@ footer p{
    
     width: 30vw !important ;
     height: auto;
-    position: absolute;
-    right: 7px;
+   margin-left: 10px !important;
   
   }
 
@@ -433,7 +432,7 @@ footer p{
   #logIn button{
     margin-top: 10px;
     width: 65vw !important;
-    margin-left: 5px !important;
+    margin-left: 10px !important;
   
   }
 
