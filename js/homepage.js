@@ -74,7 +74,7 @@ $("#logIn").submit(function (event) {
 });
 
 
-/*
+
 $(document).ready(function () {
     // Fetch Country Codes
     fetch("https://restcountries.com/v3.1/all")
@@ -101,7 +101,7 @@ $(document).ready(function () {
             });
         })
         .catch(error => console.error("Error fetching country codes:", error));
-});*/
+});
 
 let time = document.getElementById("timestamp");
 time.innerText = new Date().getFullYear();

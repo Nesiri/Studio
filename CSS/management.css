@@ -1,0 +1,78 @@
+body{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#formSection {
+    width: 45%;
+     margin-left: 25vw;
+    padding: 20px;
+    display: none; 
+    margin-top: 20px; 
+
+}
+
+#formSection form {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #dedbe3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for form */
+#addStudioForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Full-width elements */
+#addStudioForm h2,
+#addStudioForm button {
+    grid-column: span 2;
+    text-align: center;
+}
+
+/* Input group styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   
+}
+select option{
+    border-color: red;
+    color: green;
+}
+
+/* Styling the button */
+button[type="submit"] {
+    position: relative;
+    top: 10px;
+    left: 150px;
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4b7408b9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #028A57;
+}
