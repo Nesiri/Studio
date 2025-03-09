@@ -3,26 +3,32 @@ body {
 }
 
 .studio-details {
-    margin-top: 100px;  /* Adjust space below the header */
-    width: 30vw;  /* Adjust width */
-    max-height: 80vh;  /* Limit the height for better responsiveness */
+    margin-top: 100px;  
+    width: 50vw;  
+    max-height: 90dvh;  
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
     background-color: white;
     border: 5px solid rgb(181, 172, 255);
     text-align: center;
-    position: fixed;  /* Fixed positioning */
-    top: 50%;  /* Center vertically */
+    position: fixed; 
+    top: 50%;  
     left: 50%;  /* Center horizontally */
     transform: translate(-50%, -50%);
-    display: none;  /* Hidden by default */
+    display: none;  
     z-index: 9999;  /* Ensure it is above other content */
     overflow-y: auto;  /* Allow vertical scrolling if content exceeds the available height */
     box-sizing: border-box;  /* Ensure padding is included in width/height calculations */
 }
 
-/* Optional: Add a background overlay to darken the page behind the modal */
+@media(max-width:600px){
+    .studio-details {
+        width: 80vw; 
+    }
+
+}
+
 .studio-details-overlay {
     position: fixed;
     top: 0;
@@ -79,5 +85,6 @@ body {
     cursor: pointer;
     background-color: transparent;
     border: none;
-    color: #555;
+    color: hsl(0, 85%, 38%);
 }
+

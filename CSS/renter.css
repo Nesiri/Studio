@@ -1,58 +1,121 @@
-body{
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 50px;
+    width: 30%;
+   
+    height: 100%;
+    overflow-y: auto;
     overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.4); 
+  
+  
+}
+/* Responsive design for small laptops and tablets */
+@media (max-width: 1024px) {
+    .modal {
+        width: 50%; /* Increase width for better fit */
+    }
+
+    .close {
+        position: relative;
+        top: 50px;
+        left: 40vw !important;
+        
+    }
+   
 }
 
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 9999;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 40%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Responsive design for mobile devices */
+@media (max-width: 700px) {
+    .modal {
+        width: 70%; 
+    }
+    .close {
+        position: relative;
+        top: 50px;
+        left: 50vw !important;
+        
+    }
+   
 }
+
 
 .modal-content {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+ 
+    margin-left: 10px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 100%; 
+    max-width: 700px; 
+    position: relative;
+    bottom: 50px;
+   
+   
 }
 
 .close {
-    float: right;
-    font-size: 24px;
+    color: hsl(0, 89%, 44%);
+    font-size: 50px;
+    font-weight: bold;
     cursor: pointer;
+    position: relative;
+   top: 50px;
+   left: 25vw;
+  
 }
 
-.close:hover {
-    color: red;
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Form Styles */
+#filterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased gap between form elements */
 }
 
 #filterForm label {
-    display: block;
-    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 5px; /* Spacing between label and input */
 }
 
-#filterForm input, #filterForm select {
-    width: 100%;
+#filterForm input,
+#filterForm select {
     padding: 8px;
-    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px; /* Ensures consistent font size */
+    width: 100%; /* Full width for inputs */
 }
 
+
+/* Button styles */
 #filterForm button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: green;
+    padding: 12px;
+    background-color: #C5BDFF;
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    width: 48%; /* Ensure both buttons have equal width */
+    text-align: center;
+
 }
 
-#filterForm button:hover {
-    background-color: darkgreen;
+/* Hover Effects */
+#applyFilters:hover {
+    background-color: hsl(163, 100%, 35%);
+}
+
+#clearFilters:hover {
+    background-color: #c82333;
 }

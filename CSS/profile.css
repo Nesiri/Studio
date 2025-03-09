@@ -61,15 +61,15 @@ header h2 {
 nav{
     position: relative;
     nav-left: auto;
-    left: 300px;
-    bottom: 100px;
+    left: 2vw;
+    bottom: 5vw;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-   
+
 }
 
 nav ul li {

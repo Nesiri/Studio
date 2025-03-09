@@ -137,9 +137,15 @@ nav a:hover{
     .open-sidebar-button, .close-sidebar-button{
         padding: 20px;
         display: block;
+       
+        font-size: 30px;
+       
 
     }
 
+    .close-sidebar-button:hover{
+    color: hsl(359, 75%, 46% ,1);
+    }
    
   
     #sidebar-active:checked ~ .links-container{
@@ -155,6 +161,7 @@ nav a:hover{
         left: 0;
         z-index: 9;
     }
+
 
 }
 

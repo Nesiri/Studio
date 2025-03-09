@@ -63,35 +63,70 @@
             </table>
         
             <div id="contactInformation">
-                <p><strong>Contact Information:</strong></p>
-                <p>Email: </p>
-                <p>Phone: </p>
+               
             </div>
         </section>
-        <!-- Filter Modal -->
+       
         <div id="filterModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2>Filter Studios</h2>
                 <form id="filterForm">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address">
-                    <label for="area">Area (sqm):</label>
-                    <input type="number" id="area" name="area">
-                    <label for="type">Type:</label>
-                    <select id="type" name="type">
+                    <!-- Filter for Name -->
+                    <label for="filterName">Name:</label>
+                    <input type="text" id="filterName" name="name" placeholder="Studio Name">
+        
+                    <!-- Filter for Address -->
+                    <label for="filterAddress">Address:</label>
+                    <input type="text" id="filterAddress" name="address" placeholder="Studio Address">
+        
+                    <!-- Filter for Area -->
+                    <label for="filterArea">Area (sqm):</label>
+                    <input type="number" id="filterArea" name="area" placeholder="Area in sqm">
+        
+                    <!-- Filter for Type -->
+                    <label for="filterType">Type:</label>
+                    <select id="filterType" name="type">
                         <option value="">Any</option>
                         <option value="art studio">Art Studio</option>
                         <option value="recording studio">Recording Studio</option>
                         <option value="dance studio">Dance Studio</option>
                         <option value="rehearsal space">Rehearsal Space</option>
                     </select>
-                    <button type="submit">Apply Filters</button>
+        
+                    <!-- Filter for Parking -->
+                    <label for="filterParking">Parking:</label>
+                    <select id="filterParking" name="parking">
+                        <option value="">Any</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+        
+                    <!-- Filter for Capacity -->
+                    <label for="filterCapacity">Capacity:</label>
+                    <input type="number" id="filterCapacity" name="capacity" placeholder="Capacity (people)">
+        
+                    <!-- Filter for Availability -->
+                    <label for="filterAvailability">Availability:</label>
+                    <input type="text" id="filterAvailability" name="availability" placeholder="e.g. Available, Not Available">
+        
+                    <!-- Filter for Transport -->
+                    <label for="filterTransport">Public Transport:</label>
+                    <input type="text" id="filterTransport" name="transport" placeholder="Public Transport">
+                    <label for="filterPrice">Price:</label>
+                   <input type="number" id="filterPrice" name="price" placeholder="Enter minimum price">
+                   <div class="button-container">
+                    <button type="submit" id="applyFilters">Apply Filters</button>
+                    <button type="button" id="clearFilters">Clear Filters</button>
+                </div>
                 </form>
+               
             </div>
+           
         </div>
+
+       
+
+</div>
     </main>
     <footer>
         <p>Copyright &copy; <span id="timestamp"></span>, ArtNest Studio</p>
