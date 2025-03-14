@@ -244,7 +244,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    // Remove inline styles from body and main that might mess things up
+    // Remove inline styles from body and main
     $("body, main, html").removeAttr("style");
 
     // Force correct CSS
