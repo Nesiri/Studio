@@ -15,22 +15,24 @@
 }
 
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 main {
-    flex: 1;
-    display: flex;
+    flex: 1 !important;
+    display: flex !important;
 }
+
 
 footer {
     background-color: var(--purple);

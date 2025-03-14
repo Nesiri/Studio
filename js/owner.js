@@ -240,3 +240,28 @@ $(document).ready(function () {
     renderStudioData();
     $timestamp.text(new Date().getFullYear());
 });
+
+
+
+$(document).ready(function () {
+    // Remove inline styles from body and main that might mess things up
+    $("body, main, html").removeAttr("style");
+
+    // Force correct CSS
+    $("html, body").css({
+        "height": "100% !important",
+        "margin": "0 !important",
+        "padding": "0 !important",
+        "display": "flex !important",
+        "flex-direction": "column !important"
+    });
+
+    $("main").css({
+        "flex": "1 !important",
+        "display": "flex !important"
+    });
+
+    $("footer").css({
+        "margin-top": "auto" // Forces footer to stick at the bottom
+    });
+});
